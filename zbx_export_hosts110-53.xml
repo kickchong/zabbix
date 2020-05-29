@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2020-05-18T17:07:52Z</date>
+    <groups>
+        <group>
+            <name>Networking Hardware SNMPv3</name>
+        </group>
+    </groups>
+    <hosts>
+        <host>
+            <host>110-51</host>
+            <name>110-51</name>
+            <templates>
+                <template>
+                    <name>Template SNMPv3 Dell NS</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>Networking Hardware SNMPv3</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <type>SNMP</type>
+                    <ip>10.10.110.51</ip>
+                    <port>161</port>
+                    <details>
+                        <version>SNMPV3</version>
+                        <securityname>{$FGT_V3_USER}</securityname>
+                        <securitylevel>AUTHPRIV</securitylevel>
+                        <authprotocol>SHA</authprotocol>
+                        <authpassphrase>{$FGT_V3_AUTHPASS}</authpassphrase>
+                        <privprotocol>AES</privprotocol>
+                        <privpassphrase>{$FGT_V3_AUTHPRIV}</privpassphrase>
+                    </details>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <macros>
+                <macro>
+                    <macro>{$FGT_V3_AUTHPASS}</macro>
+                    <value>3uHcUKNKYQuwW6K3</value>
+                </macro>
+                <macro>
+                    <macro>{$FGT_V3_AUTHPRIV}</macro>
+                    <value>cRfUbbKFJA794aHL</value>
+                </macro>
+                <macro>
+                    <macro>{$FGT_V3_USER}</macro>
+                    <value>Zabbix-user</value>
+                </macro>
+            </macros>
+            <inventory_mode>DISABLED</inventory_mode>
+        </host>
+    </hosts>
+</zabbix_export>
